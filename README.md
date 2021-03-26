@@ -9,3 +9,4 @@ This application uses faker data for Michael Scott quotes and uses bcrypt for se
 - PostgreSQL
 - bcrypt
 - Postman
+- jsonwebtoken
