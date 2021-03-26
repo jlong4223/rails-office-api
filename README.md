@@ -8,3 +8,4 @@ This application uses faker data for Michael Scott quotes and uses bcrypt for se
 - Faker Gem
 - PostgreSQL
 - bcrypt
+- Postman
