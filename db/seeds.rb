@@ -13,4 +13,6 @@
     )
 end 
 
+User.create({name: 'seed', email: 'seed@seed.com', password: 'seed'})
+
 puts "=== Seeded Database ==="
