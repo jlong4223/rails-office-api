@@ -1,5 +1,6 @@
 class OfficesController < ApplicationController
   before_action :set_office, only: [:show, :update, :destroy]
+  before_action :authenticate_request!, only: [:show, :index, :update, :destroy]
 
   # GET /offices
   def index
