@@ -1,11 +1,11 @@
 Rails.application.routes.draw do
   root 'welcome#index'
   
-  # setting the users/login about the users resource so it doesnt mess with the id param
-  get "/users/login", to: 'users#login'
-
   # post route for signing jwt
-  post "/users/login", to: 'users#authenticate_user'
+  post "/users/login", to: 'authentication#create'
+  
+  # test route for checking for jwt with curl
+  get '/home', to: 'home#index'
 
   resources :users
   resources :offices
