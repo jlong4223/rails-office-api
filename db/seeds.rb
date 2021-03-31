@@ -6,13 +6,20 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-100.times do
-    Office.create(
-        author: "Michael Scott",
-        quote: Faker::TvShows::MichaelScott.quote
+# 100.times do
+#     Office.create(
+#         author: "Michael Scott",
+#         quote: Faker::TvShows::MichaelScott.quote
+#     )
+# end 
+
+# User.create({name: 'seed', email: 'seed@seed.com', password: 'seed'})
+
+50.times do
+    Park.create(
+        author: 'Character',
+        quote: Faker::TvShows::ParksAndRec.character
     )
-end 
+end
 
-User.create({name: 'seed', email: 'seed@seed.com', password: 'seed'})
-
-puts "=== Seeded Database ==="
+puts "=== Seeded All in Database ==="

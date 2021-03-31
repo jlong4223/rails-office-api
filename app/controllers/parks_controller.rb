@@ -1,5 +1,6 @@
 class ParksController < ApplicationController
   before_action :set_park, only: [:show, :update, :destroy]
+  before_action :authenticate_request!, only: [:show, :index, :update, :destroy]
 
   # GET /parks
   def index
