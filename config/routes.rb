@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :swansons
   resources :parks
   root 'welcome#index'
   

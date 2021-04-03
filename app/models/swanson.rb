@@ -1,0 +1,2 @@
+class Swanson < ApplicationRecord
+end
