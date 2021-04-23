@@ -15,7 +15,7 @@ class UsersController < ApplicationController
 
     # GET user/id
     def show
-        render json: @user
+        render json: @user.to_json(include: :favorites)
     end
 
     # POST's a new user
