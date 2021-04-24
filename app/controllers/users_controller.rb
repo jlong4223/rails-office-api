@@ -4,7 +4,8 @@ class UsersController < ApplicationController
     # GET users
     def index
         @users = User.all
-        render json: @users.to_json(include: :favorites)
+        # can also add the except with .to_json
+        render json: @users.to_json(include: :favorites, except: [:password_digest, :encrypted_password])
     end
 
     # = testing custom route with getting users here as well
@@ -15,7 +16,7 @@ class UsersController < ApplicationController
 
     # GET user/id
     def show
-        render json: @user.to_json(include: :favorites)
+        render json: @user
     end
 
     # POST's a new user
@@ -47,7 +48,9 @@ class UsersController < ApplicationController
     private
 
     def set_user
-        @user = User.find(params[:id])
+        # using the except to remove the password from showing in the route as json - moved the include favorites here
+        # if favorites isnt part of the same .json method, gets removed
+        @user = User.find(params[:id]).as_json(include: :favorites, except: [:password_digest])
     end
 
     def user_params
