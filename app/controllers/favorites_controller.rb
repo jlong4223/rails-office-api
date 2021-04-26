@@ -1,10 +1,16 @@
 class FavoritesController < ApplicationController
     before_action :set_favorite, only: [:show, :update, :destroy]
-    
+    before_action :authenticate_request!, only: [:destroy]
+
     # GET /favorites
     def index
         @favorites = Favorite.all
         render json: @favorites.to_json(include: :user)
+    end
+
+    # GET /favorites/1
+    def show
+        render json: @favorite.to_json(include: :user)
     end
 
     #POST /favorites
@@ -16,6 +22,11 @@ class FavoritesController < ApplicationController
         else
             render json: @favorite.errors, status: :unprocessable_entity
         end
+    end
+
+    # DELETE /favorites/1
+    def destroy
+        @favorite.destroy
     end
 
     private
