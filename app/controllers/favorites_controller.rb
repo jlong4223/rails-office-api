@@ -8,7 +8,7 @@ class FavoritesController < ApplicationController
         render json: @favorites.to_json(include: :user)
     end
 
-    # GET /parks/1
+    # GET /favorites/1
     def show
         render json: @favorite.to_json(include: :user)
     end
@@ -22,6 +22,11 @@ class FavoritesController < ApplicationController
         else
             render json: @favorite.errors, status: :unprocessable_entity
         end
+    end
+
+    # DELETE /favorites/1
+    def destroy
+        @favorite.destroy
     end
 
     private
