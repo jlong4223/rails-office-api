@@ -10,3 +10,5 @@ This application uses faker data for Michael Scott quotes and uses bcrypt for se
 - bcrypt
 - Postman
 - jsonwebtoken
+- Heroku
+- Heroku Postgres
